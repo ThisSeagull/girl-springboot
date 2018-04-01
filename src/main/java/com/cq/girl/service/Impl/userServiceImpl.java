@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.io.Serializable;
 
 
-@Service
+
 public class userServiceImpl implements userService,Serializable {
 
      private userDao userDao;

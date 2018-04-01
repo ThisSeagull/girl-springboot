@@ -18,8 +18,6 @@ public class HelloController {
     @Value("${name}")
     private String name;
 
-    @Autowired  userService userService;
-
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String say(){
         return "hello "+name;
@@ -29,13 +27,12 @@ public class HelloController {
         return "hello 黄小英";
     }
 
-    @RequestMapping(value = "/front/addUser",method = RequestMethod.GET)
+    @RequestMapping(value = "front/addUser",method = RequestMethod.GET)
     public Integer insertIntoUser(@ModelAttribute("user") User user, HttpServletRequest request){
             User u =new User();
             u.setName("cq");
             u.setAge(17);
-
-        return userService.addUser(user);
+        return 1;
     }
 
 }
